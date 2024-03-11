@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>monke to monkey</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="imagechange">
+        <img src="images/range-slider/1.jpg" id="imgchange">
+    </div>
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="5" value="1" class="slider-range" id="myRange">
+        <ul class="range-number">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span color="#FFFFFF" id="rangevalue"></span>
+    </div>
+
+
+
+    <script>
+        let rangevalue = document.getElementById("myRange");
+        let setvalue = document.getElementById("rangevalue");
+        let imgchangevalue = document.getElementById("imgchange")
+            //setvalue.innerHTML = rangevalue.value;
+            //console.log(rangevalue.value)
+
+        //Now will use oninput event.
+        rangevalue.oninput = function() {
+            let getvalue = rangevalue.value;
+            setvalue.innerHTML = this.value;
+            if (getvalue == 1) {
+                imgchangevalue.setAttribute("src", "images/range-slider/1.jpg")
+            } else if (getvalue == 2) {
+                imgchangevalue.setAttribute("src", "images/range-slider/2.jpg")
+            } else if (getvalue == 3) {
+                imgchangevalue.setAttribute("src", "images/range-slider/3.jpg")
+            } else if (getvalue == 4) {
+                imgchangevalue.setAttribute("src", "images/range-slider/4.jpg")
+            } else if (getvalue == 5) {
+                imgchangevalue.setAttribute("src", "images/range-slider/5.jpg")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
